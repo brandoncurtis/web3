@@ -1,6 +1,18 @@
 <html>
 <head>
 <script src="https://wallet.metamask.io/metamascara.js"></script>
+<script>
+  const metamask = require('metamascara')
+  const EthJs = require('ethjs')
+  // mascara will use the environmental provider if the user brings one
+  // in the form of metamask extension, mist or parity
+  // other wise it will make one for you :}
+  const ethereumProvider = metamask.createDefaultProvider()
+	const eth = new EthJs(ethereumProvider)
+	console.log(eth)
+</script>
 </head>
 <body>
 <h1>Hello World</h1>
+
+your balance: <span id=web3_bal></span>
